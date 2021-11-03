@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+        где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+        переданного значения операции (использовать switch) выполнить одну из арифметических
+        операций и вернуть полученное значение.
+        */
+
+        function addTwoNumbers(num1, num2) {
+            return (num1 + num2);
+        }
+
+        function differenceTwoNumbers(num1, num2) {
+            return (num1 - num2);
+        }
+        function multiplicationTwoNumbers(num1, num2) {
+            return (num1 * num2);
+        }
+        function dividingTwoNumbers(num1, num2) {
+            if (num2 !== 0) {
+                return (num1 / num2);
+            }
+            return "на ноль делить нельзя"
+        }
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+":
+                    return ("Сумма = " + addTwoNumbers(arg1, arg2));
+                    break;
+                case "-":
+                    return ("Разность = " + differenceTwoNumbers(arg1, arg2));
+                    break;
+                case "*":
+                    return ("Произведение = " + multiplicationTwoNumbers(arg1, arg2));
+                    break;
+                case "/":
+                    return ("Частное = " + dividingTwoNumbers(arg1, arg2));
+            }
+        }
+
+        let a = +prompt("Введите целое число");
+        let b = +prompt("Введите целое число");
+        let o = prompt("Введите арифметическое действие: + | - | * | / ");
+
+        alert(mathOperation(a, b, o))
+
+    </script>
+</body>
+
+</html>
